@@ -1,10 +1,9 @@
-﻿using FlightManagementSystem.Domain;
+using FlightManagementSystem.Domain;
 using FluentValidation;
 
 namespace FlightManagementSystem.Application.Commands.DeleteFlight
 {
-    public class DeleteFlightCommandValidator : AbstractValidator<DeleteFlightCommand>
-    {
+    public class DeleteFlightCommandValidator : AbstractValidator<DeleteFlightCommand>{
         public DeleteFlightCommandValidator()
         {
             RuleFor(x => x.Id)
