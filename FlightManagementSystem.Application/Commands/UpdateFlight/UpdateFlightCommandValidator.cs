@@ -1,5 +1,4 @@
-﻿using FlightManagementSystem.Application.Commands.CreateFlight;
-using FlightManagementSystem.Domain;
+﻿using FlightManagementSystem.Domain;
 using FluentValidation;
 
 namespace FlightManagementSystem.Application.Commands.UpdateFlight
