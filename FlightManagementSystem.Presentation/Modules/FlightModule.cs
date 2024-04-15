@@ -10,13 +10,15 @@ namespace FlightManagementSystem.Presentation.Modules
 {
     public static class FlightModule
     {
+
         public static void AddFlightsEndpoints(this IEndpointRouteBuilder app)
         {
             app.MapGet("/api/flights", async (IMediator mediator, CancellationToken ct) =>
             {
                 var flights = await mediator.Send(new GetFlightsQuery(), ct);
                 return Results.Ok(flights);
-            }).WithTags("Flights");
+            }).WithTags("Flights")
+            .RequireAuthorization();
 
             app.MapGet("/api/flights/{id}", async (IMediator mediator,int id, CancellationToken ct) =>
             {

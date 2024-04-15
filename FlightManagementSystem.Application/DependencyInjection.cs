@@ -1,4 +1,6 @@
-﻿using FlightManagementSystem.Application.Mapping;
+﻿using FlightManagementSystem.Application.Behaviors;
+using FlightManagementSystem.Application.Mapping;
+using FluentValidation;
 using Mapster;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -12,7 +14,7 @@ namespace FlightManagementSystem.Application
             services.AddMediatR(cf =>
             {
                 cf.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-                //cf.AddOpenBehavior(typeof(ValidationBehavior<,>));
+                cf.AddOpenBehavior(typeof(ValidationBehavior<,>));
             });
 
             MappingConfig.Configure();
@@ -20,7 +22,7 @@ namespace FlightManagementSystem.Application
             config.Scan(Assembly.GetExecutingAssembly());
             services.AddSingleton(config);
 
-            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return services;
         }

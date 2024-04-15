@@ -1,4 +1,6 @@
-﻿using FlightManagementSystem.Persistence;
+﻿using FlightManagementSystem.Application.Exceptions;
+using FlightManagementSystem.Domain;
+using FlightManagementSystem.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +21,7 @@ namespace FlightManagementSystem.Application.Commands.UpdateFlight
 
             if(flightToUpdate == null)
             {
-                throw new Exception();
+                throw new NotFoundException($"{nameof(Flight)} z {nameof(Flight.Id)}: {request.Id}" + $"nie został znaleziony w bazie danych");
             }
 
             flightToUpdate.FlightNumber = request.FlightNumber;

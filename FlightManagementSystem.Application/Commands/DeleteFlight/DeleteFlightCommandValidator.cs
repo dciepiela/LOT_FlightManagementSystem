@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FlightManagementSystem.Domain;
+using FluentValidation;
 
 namespace FlightManagementSystem.Application.Commands.DeleteFlight
 {
-    internal class DeleteFlightCommandValidator
+    public class DeleteFlightCommandValidator : AbstractValidator<DeleteFlightCommand>
     {
+        public DeleteFlightCommandValidator()
+        {
+            RuleFor(x => x.Id)
+                .NotEmpty()
+                .WithMessage($"{nameof(Flight.Id)} nie może być puste");
+        }
     }
 }
