@@ -1,4 +1,6 @@
 ﻿using FlightManagementSystem.Application.DTO;
+using FlightManagementSystem.Application.Exceptions;
+using FlightManagementSystem.Domain;
 using FlightManagementSystem.Persistence;
 using Mapster;
 using MediatR;
@@ -22,7 +24,7 @@ namespace FlightManagementSystem.Application.Queries.GetFlightById
 
             if(flight == null)
             {
-                throw new Exception();
+                throw new NotFoundException($"{nameof(Flight)} z {nameof(Flight.Id)}: {request.Id}" + $"nie został znaleziony w bazie danych");
             }
 
             return flight.Adapt<FlightDto>();
