@@ -2,5 +2,5 @@
 
 namespace FlightManagementSystem.Application.DTO
 {
-    public record FlightDto (string FlightNumber, DateTime DateDeparture, string PlaceDeparture, string PlaceArrival, AircraftType AircraftType);
+    public record FlightDto (int Id, string FlightNumber, DateTime DateDeparture, string PlaceDeparture, string PlaceArrival, AircraftType AircraftType);
 }

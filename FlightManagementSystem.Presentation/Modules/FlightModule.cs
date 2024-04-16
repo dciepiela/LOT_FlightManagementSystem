@@ -9,8 +9,7 @@ using MediatR;
 namespace FlightManagementSystem.Presentation.Modules
 {
     public static class FlightModule
-    {
-
+    { 
         public static void AddFlightsEndpoints(this IEndpointRouteBuilder app)
         {
             app.MapGet("/api/flights", async (IMediator mediator, CancellationToken ct) =>
@@ -51,7 +50,7 @@ namespace FlightManagementSystem.Presentation.Modules
                 return Results.Ok(result);
             }).WithTags("Flights");
 
-            app.MapDelete("/api/flights", async (IMediator mediator, int id, CancellationToken ct) =>
+            app.MapDelete("/api/flights/${id}", async (IMediator mediator, int id, CancellationToken ct) =>
             {
                 var deleteFlight = new DeleteFlightCommand(id);
                 var result = await mediator.Send(deleteFlight, ct);

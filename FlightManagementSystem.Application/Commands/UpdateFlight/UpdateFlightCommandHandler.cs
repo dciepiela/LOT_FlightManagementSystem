@@ -21,7 +21,7 @@ namespace FlightManagementSystem.Application.Commands.UpdateFlight
 
             if(flightToUpdate == null)
             {
-                throw new NotFoundException($"{nameof(Flight)} z {nameof(Flight.Id)}: {request.Id}" + $"nie został znaleziony w bazie danych");
+                throw new NotFoundException($"{nameof(Flight)} z {nameof(Flight.Id)}: {request.Id}" + $" nie został znaleziony w bazie danych");
             }
 
             flightToUpdate.FlightNumber = request.FlightNumber;
@@ -31,7 +31,7 @@ namespace FlightManagementSystem.Application.Commands.UpdateFlight
             flightToUpdate.AircraftType = request.AircraftType;
 
 
-            _context.Flights.Add(flightToUpdate);
+            _context.Flights.Update(flightToUpdate);
             await _context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
