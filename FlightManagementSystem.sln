@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightManagementSystem.Presentation", "FlightManagementSystem.Presentation\FlightManagementSystem.Presentation.csproj", "{E5148F20-776F-4372-BD0A-CD9E35FA40C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightManagementSystem.Presentation", "FlightManagementSystem.Presentation\FlightManagementSystem.Presentation.csproj", "{E5148F20-776F-4372-BD0A-CD9E35FA40C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightManagementSystem.Application", "FlightManagementSystem.Application\FlightManagementSystem.Application.csproj", "{4999F76E-9475-4F6F-ADC6-87E2B2D5D0FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightManagementSystem.Application", "FlightManagementSystem.Application\FlightManagementSystem.Application.csproj", "{4999F76E-9475-4F6F-ADC6-87E2B2D5D0FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightManagementSystem.Domain", "FlightManagementSystem.Domain\FlightManagementSystem.Domain.csproj", "{6A611303-20A2-441A-99F0-BF0FC8FED525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightManagementSystem.Domain", "FlightManagementSystem.Domain\FlightManagementSystem.Domain.csproj", "{6A611303-20A2-441A-99F0-BF0FC8FED525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightManagementSystem.Persistence", "FlightManagementSystem.Persistence\FlightManagementSystem.Persistence.csproj", "{358141EE-2044-45AB-8B58-AC0845B537F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightManagementSystem.Persistence", "FlightManagementSystem.Persistence\FlightManagementSystem.Persistence.csproj", "{358141EE-2044-45AB-8B58-AC0845B537F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightManagementSystem.Tests", "FlightManagementSystem.Tests\FlightManagementSystem.Tests.csproj", "{E181E1A5-8588-4897-ACE2-F9F3E733185D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{358141EE-2044-45AB-8B58-AC0845B537F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{358141EE-2044-45AB-8B58-AC0845B537F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{358141EE-2044-45AB-8B58-AC0845B537F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E181E1A5-8588-4897-ACE2-F9F3E733185D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E181E1A5-8588-4897-ACE2-F9F3E733185D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E181E1A5-8588-4897-ACE2-F9F3E733185D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E181E1A5-8588-4897-ACE2-F9F3E733185D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,6 @@ namespace FlightManagementSystem.Persistence
         {
         }
 
-        public DbSet<Flight> Flights { get; set; }
+        public virtual DbSet<Flight> Flights { get; set; }
     }
 }
