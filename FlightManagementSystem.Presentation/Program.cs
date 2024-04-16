@@ -3,10 +3,7 @@ using FlightManagementSystem.Persistence;
 using FlightManagementSystem.Presentation.Handlers;
 using FlightManagementSystem.Presentation.Middleware;
 using FlightManagementSystem.Presentation.Modules;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +26,13 @@ builder.Services.AddDbContext<FlightsDbContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DbConnectionString"));
 });
 
+
+builder.Services.AddCors(opt => {
+    opt.AddPolicy("CorsPolicy", policyBuilder => {
+        policyBuilder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
+    });
+});
+
 builder.Services.AddApplication();
 builder.Services.AddExceptionHandler<ExceptionHandler>();
 
@@ -42,6 +46,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandler(_ => { });
+app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
